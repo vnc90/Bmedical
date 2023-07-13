@@ -9,15 +9,15 @@ async function main() {
     console.log("Account balance:", (await deployer.provider.getBalance(deployer.address)).toString());
 
 
-    const BMEDICAL = await ethers.getContractFactory("Bmedical");
-    const Bmedical = await BMEDICAL.deploy();
-    console.log('Bmedical address: ', (await Bmedical.getAddress()));
-    Config.setConfig(network + '.Bmedical', (await Bmedical.getAddress()));
+    // const BMEDICAL = await ethers.getContractFactory("Bmedical");
+    // const Bmedical = await BMEDICAL.deploy();
+    // console.log('Bmedical address: ', (await Bmedical.getAddress()));
+    // Config.setConfig(network + '.Bmedical', (await Bmedical.getAddress()));
 
-    // const BOTSELL = await ethers.getContractFactory("BOTSELL");
-    // const botsell = await BOTSELL.deploy();
-    // console.log('BOTSELL address: ', botsell.address);
-    // Config.setConfig(network + '.BOTSELL', botsell.address);
+    const BMEDICALTOKEN = await ethers.getContractFactory("BMTOKEN");
+    const bmedicalToken = await BMEDICALTOKEN.deploy();
+    console.log('Bmedcal Token address: ', await bmedicalToken.getAddress());
+    Config.setConfig(network + '.Bmedical Token', await bmedicalToken.getAddress());
 
     await Config.updateConfig();
     
