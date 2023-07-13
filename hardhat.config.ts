@@ -9,7 +9,6 @@ const config: HardhatUserConfig = {
     bsctest: {
       url: "https://data-seed-prebsc-2-s2.binance.org:8545",
       accounts:  [process.env.PRIV_KEY]
-      // accounts : ['bf9f947ecc0a08bebf9cd683bf0b09308a9589bd80a53f41ddb2f5a6baccccaf']
     }
   },
   etherscan: {
